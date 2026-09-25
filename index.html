@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DILPREET OFFICIAL 🇮🇳
-</title>
+    <title>DILPREET OFFICIAL 🇮🇳</title>
 
     <!-- Meta Pixel Code -->
     <script>
@@ -378,8 +377,7 @@
         <!-- Profile Image -->
         <div class="profile-sec">
             <div class="profile-box">
-                <img src="profile.png" alt="DILPREET OFFICIAL 🇮🇳
-">
+                <img src="profile.png" alt="DILPREET OFFICIAL 🇮🇳">
             </div>
         </div>
 
@@ -387,7 +385,6 @@
         <div class="sub-tag">Stock Market Learning Hub</div>
         <div class="main-name">
             DILPREET OFFICIAL 🇮🇳
-
             <span></span>
         </div>
 
@@ -451,7 +448,8 @@
         <!-- Disclaimer -->
         <div class="disclaimer-box">
             <div class="disclaimer-title">⚠️ DISCLAIMER</div>
-            BADSHAH BROKING provides stock market education, chart analysis, and market information for educational purposes only. We are not SEBI registered and do not offer financial, investment, or paid trading tips.
+            DILPREET OFFICIAL 🇮🇳
+ provides stock market education, chart analysis, and market information for educational purposes only. We are not SEBI registered and do not offer financial, investment, or paid trading tips.
         </div>
 
         <!-- Footer Links -->
@@ -462,57 +460,65 @@
 
     </div>
 
-    <!-- JavaScript - Single Click Tracking Logic -->
+    <!-- Optimized Anti-Fake Click & Unified Script -->
     <script>
-        var isMainClicked = false;
-        var isAgencyClicked = false;
-
         var mainTelegramUrl = "https://t.me/+SOWClImnXPFkNzk9";
         var agencyTelegramUrl = "https://t.me/+mp524qElHEQ2YWU1";
 
-        // Main Channel Button Handler
         function trackButtonClick() {
-            if (!isMainClicked) {
-                isMainClicked = true;
-
-                if (typeof fbq !== 'undefined') {
-                    fbq('trackCustom', 'TelegramBtnClick'); 
-                    fbq('track', 'Subscribe'); 
-                }
-
-                var btn = document.getElementById('telegramLink');
-                if (btn) {
-                    btn.style.pointerEvents = 'none';
-                    btn.style.opacity = '0.7';
-                }
-
-                setTimeout(function() {
-                    window.location.href = mainTelegramUrl;
-                }, 300);
+            // Anti-Spam Check: Verify if user already clicked in this browser session
+            if (sessionStorage.getItem("mainClicked")) {
+                window.location.href = mainTelegramUrl;
+                return;
             }
+
+            sessionStorage.setItem("mainClicked", "true");
+
+            // Disable button visual interactions instantly
+            var btn = document.getElementById('telegramLink');
+            if (btn) {
+                btn.style.pointerEvents = 'none';
+                btn.style.opacity = '0.6';
+            }
+
+            // Track Meta Pixel Event
+            if (typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'TelegramBtnClick'); 
+                fbq('track', 'Subscribe'); 
+            }
+
+            // Safe Redirect
+            setTimeout(function() {
+                window.location.href = mainTelegramUrl;
+            }, 300);
         }
 
-        // Agency Link Click Handler
         function trackAgencyClick() {
-            if (!isAgencyClicked) {
-                isAgencyClicked = true;
-
-                if (typeof fbq !== 'undefined') {
-                    fbq('trackCustom', 'AgencyLinkClick');
-                }
-
-                var link = document.getElementById('agencyLink');
-                if (link) {
-                    link.style.pointerEvents = 'none';
-                    link.style.opacity = '0.7';
-                }
-
-                setTimeout(function() {
-                    window.location.href = agencyTelegramUrl;
-                }, 300);
+            // Anti-Spam Check
+            if (sessionStorage.getItem("agencyClicked")) {
+                window.location.href = agencyTelegramUrl;
+                return;
             }
+
+            sessionStorage.setItem("agencyClicked", "true");
+
+            // Disable agency link visual interactions
+            var link = document.getElementById('agencyLink');
+            if (link) {
+                link.style.pointerEvents = 'none';
+                link.style.opacity = '0.6';
+            }
+
+            // Track Meta Pixel Event
+            if (typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'AgencyLinkClick');
+            }
+
+            // Safe Redirect
+            setTimeout(function() {
+                window.location.href = agencyTelegramUrl;
+            }, 300);
         }
     </script>
-
 </body>
 </html>
